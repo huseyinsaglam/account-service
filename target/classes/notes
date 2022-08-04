@@ -1,0 +1,21 @@
+====================================================================================
+1- Cassandra => Dagıtık mimari kullanıyor olması
+2- ElasticSearch => Text aramasına özgü güçlü bir üründür.
+Çok uzun vadede veri saklayacagımız sistem degildir. Daha çok arama işlemlerinin indexlenmesinde hızlıca search yapacagımız bir yapıdır.
+İlişkisel verilerin daha kullanışlı yapabilecegiz bir yapı degildir.
+3- PostgreSQL =
+4- Account - Ticket - Notification => Bunların her biri ayrı bir mikro servis yapısında olacak
+Bu servislerin arasındaki iletişimi ise RabbitMQ haberleştirecegiz.
+5- ConfigServer => Her bir konf. kendi içerisinde yönetebilmemizi saglayacak. Spring cloud bileşeni kullanılacak
+6- Eureka => Service Register. Servislerin bilgilerini tutacak. Spring cloud bileşeni kullanılacak
+7- AuthServer => Servisler arası hangi kullanıcı girsin hangi kullanıcısı servise erişim saglayabilsin yada saglayamasın. Bunlar kontrol edilecek.
+Spring Cloud bileşeni olacak
+8- Hystrix => Moduller arasında herhangi hata aldıgında bunları loglama yapabilecegiz bir yapıya sahiptir.
+9- API Gateway => Modullerin dışarıya açılmasını API Gateway ile yapmış olacagız. Eura Serverden alacak.
+
+====================================================================================
+docker run -p 9042:9042 -d cassandra:latest
+db username = cassandra; password = cassandra
+
+dosyanının verilecegi path adresine gel sonra asagidaki komutu calistir.
+docker-compose -f docker-compose.yml up -d
